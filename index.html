@@ -127,13 +127,13 @@ var canvas;
   canvas = document.getElementById('world');
   canvas.width = window.innerWidth * dpr;
   canvas.height = window.innerHeight * dpr;
-  console.log(canvas.width);
-  console.log(canvas.height);
+  // console.log(canvas.width);
+  // console.log(canvas.height);
   // キャンバスの表示自体が大きくならないように、CSSで元のサイズを設定しておく
   canvas.style.width = window.innerWidth + 'px';
   canvas.style.height = window.innerHeight + 'px';
-  console.log(canvas.style.width);
-  console.log(canvas.style.height);
+  // console.log(canvas.style.width);
+  // console.log(canvas.style.height);
 })();
 
 var context = canvas.getContext('2d');
@@ -153,20 +153,20 @@ Particle.prototype.move = function(){
 
 Particle.prototype.loopEdge = function(){
   if(this.location.x < 0){
-    this.location.x = this.location.x + canvas.width;
+    this.location.x = this.location.x + canvas.width/dpr;
   }
 
-  if(this.location.x > canvas.width){
-    this.location.x = this.location.x - canvas.width;
+  if(this.location.x > canvas.width/dpr){
+    this.location.x = this.location.x - canvas.width/dpr;
   }
 
   if(this.location.y < 0){
-    this.location.y = this.location.y + canvas.height;
+    this.location.y = this.location.y + canvas.height/dpr;
   }
 
 
-  if(this.location.y > canvas.height){
-    this.location.y = this.location.y - canvas.height;
+  if(this.location.y > canvas.height/dpr){
+    this.location.y = this.location.y - canvas.height/dpr;
   }
 
 
