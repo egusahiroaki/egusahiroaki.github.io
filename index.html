@@ -5,6 +5,7 @@
 <title>Hiroaki Egusa</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./js/jvector.js"></script>
 </head>
 <body>
   <canvas id="world"></canvas>
@@ -115,7 +116,109 @@ a:visited { color: black; }
 a:active { color: black; }
 </style>
 <script type="text/javascript">
-var JVector=function(t,i){this.x=t,this.y=i};JVector.prototype.add=function(t){this.x=this.x+t.x,this.y=this.y+t.y},JVector.prototype.sub=function(t){this.x=this.x-t.x,this.y=this.y-t.y},JVector.prototype.normalize=function(t){var i=Math.sqrt(this.x*this.x+this.y*this.y);this.x=this.x/i,this.y=this.y/i},JVector.prototype.mult=function(t){this.x=this.x*t,this.y=this.y*t},JVector.prototype.div=function(t){0!=t?(this.x=this.x/t,this.y=this.y/t):console.log("argument is 0.")},JVector.prototype.limit=function(t){var i=Math.sqrt(this.x*this.x+this.y*this.y);this.x=this.x*t/i,this.y=this.y*t/i},JVector.prototype.scalar=function(){return Math.sqrt(this.x*this.x+this.y*this.y)};var canvas;!function(){canvas=document.getElementById("world"),canvas.width=window.innerWidth,canvas.height=window.innerHeight}();var context=canvas.getContext("2d"),Particle=function(t,i){this.location=new JVector(t,i),this.velocity=new JVector((2*Math.random()-1)*Math.floor(2*Math.random()+1),(2*Math.random()-1)*Math.floor(2*Math.random()+1)),this.size=0,this.color="#"+((1<<24)*Math.random()|0).toString(16),this.connectNum=0};Particle.prototype.move=function(){this.location.add(this.velocity)},Particle.prototype.loopEdge=function(){this.location.x<0&&(this.location.x=this.location.x+canvas.width),this.location.x>canvas.width&&(this.location.x=this.location.x-canvas.width),this.location.y<0&&(this.location.y=this.location.y+canvas.height),this.location.y>canvas.height&&(this.location.y=this.location.y-canvas.height)},Particle.prototype.draw=function(t){t.beginPath(),t.arc(this.location.x,this.location.y,this.size,0,2*Math.PI,!0),t.fillStyle=this.color,t.fill()},Particle.prototype.search=function(t,i){this.connectNum=0;for(var o=0;o<i.length;o++){var a=(this.location.x-i[o].location.x)*(this.location.x-i[o].location.x)+(this.location.y-i[o].location.y)*(this.location.y-i[o].location.y),n=Math.sqrt(a);180>n&&(t.beginPath(),t.moveTo(this.location.x,this.location.y),t.lineTo(i[o].location.x,i[o].location.y),t.lineWidth=4/Math.sqrt(n),t.strokeStyle=this.color,t.stroke(),this.connectNum++)}this.size=2.2*this.connectNum};for(var particles=[],PARTICLE_NUM=20,i=0;PARTICLE_NUM>i;i++)particles.push(new Particle(Math.random()*canvas.width,Math.random()*canvas.height));var animation=function(){context.clearRect(0,0,canvas.width,canvas.height);for(var t=0;PARTICLE_NUM>t;t++)particles[t].move(),particles[t].loopEdge(),particles[t].search(context,particles),particles[t].draw(context)};setInterval(animation,33);
+
+var dpr = window.devicePixelRatio || 1;
+
+
+// canvasを全画面にする。
+var canvas;
+
+(function(){
+  canvas = document.getElementById('world');
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  console.log(canvas.width);
+  console.log(canvas.height);
+  // キャンバスの表示自体が大きくならないように、CSSで元のサイズを設定しておく
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  console.log(canvas.style.width);
+  console.log(canvas.style.height);
+})();
+
+var context = canvas.getContext('2d');
+context.scale(dpr, dpr);
+
+var Particle = function(x,y){
+  this.location = new JVector(x,y);
+  this.velocity = new JVector((Math.random() * 2 - 1) * Math.floor(Math.random()*2+1), (Math.random() * 2 -1) * Math.floor(Math.random()*2+1));
+  this.size = 0;
+  this.color = "#"+((1<<24)*Math.random()|0).toString(16);//"#5de2b9";
+  this.connectNum = 0;
+}
+
+Particle.prototype.move = function(){
+  this.location.add(this.velocity);
+}
+
+Particle.prototype.loopEdge = function(){
+  if(this.location.x < 0){
+    this.location.x = this.location.x + canvas.width;
+  }
+
+  if(this.location.x > canvas.width){
+    this.location.x = this.location.x - canvas.width;
+  }
+
+  if(this.location.y < 0){
+    this.location.y = this.location.y + canvas.height;
+  }
+
+
+  if(this.location.y > canvas.height){
+    this.location.y = this.location.y - canvas.height;
+  }
+
+
+}
+
+Particle.prototype.draw = function(context){
+  context.beginPath();
+  context.arc(this.location.x, this.location.y, this.size, 0, Math.PI*2,true);
+  context.fillStyle = this.color;
+  context.fill();
+}
+
+// 近くに球体があったらlineを引く
+Particle.prototype.search = function(context, particles){
+  this.connectNum = 0;
+  for(var i=0; i < particles.length; i++){
+    var d2 = (this.location.x - particles[i].location.x) * (this.location.x - particles[i].location.x) + (this.location.y - particles[i].location.y) * (this.location.y - particles[i].location.y);
+    var d = Math.sqrt(d2);
+    if(d < 180){
+      context.beginPath();
+      context.moveTo(this.location.x, this.location.y);
+      context.lineTo(particles[i].location.x, particles[i].location.y);
+      context.lineWidth = 4/Math.sqrt(d); // 近いほどそのparticleに対するlineは太くなる
+      context.strokeStyle = this.color;
+      context.stroke();
+      this.connectNum++;
+    }
+  }
+
+  // 繋がると、particleは大きくなる
+  this.size = this.connectNum * 2.2;
+}
+
+var particles = [];
+var PARTICLE_NUM = 20;
+
+for(var i=0; i< PARTICLE_NUM; i++){
+  particles.push(new Particle(Math.random()*canvas.width, Math.random()*canvas.height));
+}
+
+var animation = function(){
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for(var i=0; i< PARTICLE_NUM; i++){
+    particles[i].move();
+    particles[i].loopEdge();
+    particles[i].search(context, particles);
+    particles[i].draw(context);
+  }
+};
+
+setInterval(animation,33);
+
 </script>
 <!--
   Copyright 2017 Hiroaki Egusa Licensed by MIT License.
