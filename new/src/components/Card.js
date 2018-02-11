@@ -11,8 +11,8 @@ class Card extends Component {
         <div className="DescriptionContainer">
           <div className="Title">{this.props.title}</div>
           <div className="Description">{this.props.description}</div>
-          <div className="Button">View Detail ></div>
         </div>
+        <div className="Button">View Detail ></div>
       </li>
     );
   }
