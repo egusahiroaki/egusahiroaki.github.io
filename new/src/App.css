@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f3f3f3;
 }
 
 .App-logo {
@@ -25,4 +26,47 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+.Item {
+  display: inline-block;
+  width: 30%;
+  margin-bottom:80px;
+  margin-right:20px;
+  list-style: none;
+  box-sizing: border-box;
+  /* border: 1px solid #ddd; */
+}
+
+.ImageContainer {
+  overflow: hidden;
+  object-fit: contain;
+  top: -50%;
+  left: -50%;
+  height: 200px;
+  max-width: 200%;
+  /* backgroundColor: #ddd */
+}
+
+.Image {
+
+}
+
+.DescriptionContainer {
+  padding: 10px;
+  text-align: left;
+  background: white;
+}
+
+.Title {
+  margin-bottom: 10px;
+}
+
+.Description {
+  margin-bottom: 10px;
+}
+
+.Button {
+
 }

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class Card extends Component {
   render() {
     return (
-      <div>
-        <img src={this.props.image} alt="logo" />
-        <div>{this.props.title}</div>
-        <div>{this.props.description}</div>
-      </div>
+      <li className="Item">
+        <div className="ImageContainer">
+          <img className="Image" src={this.props.image} alt="logo" />
+        </div>
+        <div className="DescriptionContainer">
+          <div className="Title">{this.props.title}</div>
+          <div className="Description">{this.props.description}</div>
+          <div className="Button">View Detail ></div>
+        </div>
+      </li>
     );
   }
 }
