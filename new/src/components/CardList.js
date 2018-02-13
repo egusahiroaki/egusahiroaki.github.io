@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Card from './Card';
 
 import NewCard from './NewCard';
-
 
 import dotInt from '../images/dot_int.png';
 import egg from '../images/egg.png';
@@ -78,9 +76,10 @@ class CardList extends Component {
             description={item.description}
           />
         })} */}
-        {testItems.map((item) => {
+        {testItems.map((item, index) => {
           return <NewCard
             key={item.title}
+            index={index}
             image={item.image}
             title={item.title}
             description={item.description}

@@ -7,8 +7,6 @@ import Typography from 'material-ui/Typography';
 import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
 import PlayArrowIcon from 'material-ui-icons/PlayArrow';
 import SkipNextIcon from 'material-ui-icons/SkipNext';
-import DetailModal from './DetailModal';
-
 
 const styles = theme => ({
   card: {
@@ -43,26 +41,33 @@ function NewCard(props) {
   const { classes, theme } = props;
 
   // play button clicked
-  var handlePlayClick = () => {
-    console.log("hogehoge");
+  var handlePlayClick = (index) => {
+    console.log(index);
+    var contents = document.querySelectorAll(".cardBase");
+    for(let [i, content] of contents.entries()){
+      if(i === index){
+        content.classList.toggle('clicked');
+      }else{
+        content.classList.toggle('outside');
+      }
+    }
   };
   
-
   return (
-    <div>
-      <Card className={classes.card} style={ {'maxWidth': '350px', 'margin':'30px auto' } }>
+    <div className="cardOutside">
+      <Card className={"cardBase " + classes.card}>
         <div className={classes.details} >
           <CardContent className={classes.content}>
             <Typography variant="headline">{props.title}</Typography>
-            <Typography variant="subheading" color="textSecondary">
+            {/* <Typography variant="subheading" color="textSecondary">
               Mac Miller
-            </Typography>
+            </Typography> */}
           </CardContent>
           <div className={classes.controls}>
             <IconButton aria-label="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
-            <IconButton aria-label="Play/pause" onClick={() => handlePlayClick() }>
+            <IconButton aria-label="Play/pause" onClick={() => handlePlayClick(props.index) }>
               <PlayArrowIcon className={classes.playIcon} />
             </IconButton>
             <IconButton aria-label="Next">

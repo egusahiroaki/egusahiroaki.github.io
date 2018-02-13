@@ -89,3 +89,28 @@
   font-size: 14px;
   background: #b7b7b7;
 }
+
+/* Cardについて */
+.cardBase {
+  max-width: 350px;
+  margin: 30px auto;
+  height: 151px;
+  background-color: red;
+  transition: 2s;
+}
+
+.cardOutside {
+  transition: 3s;
+}
+
+.clicked {
+  max-width: 600px;
+  width: 500px;
+  height: 500px;
+  /* background-color: #3f3; */
+}
+
+.outside {
+  margin-left: 10px;
+  /* background-color: #3f3; */
+}
