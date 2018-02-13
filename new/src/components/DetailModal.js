@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 
 export default class DetailModal extends React.Component {
   state = {
@@ -18,7 +17,7 @@ export default class DetailModal extends React.Component {
 
   render() {
     const actions = [
-      <FlatButton
+      <Button
         label="x"
         primary={true}
         onClick={this.handleClose}
@@ -27,7 +26,7 @@ export default class DetailModal extends React.Component {
 
     return (
       <div>
-        <RaisedButton label="View Detail" onClick={this.handleOpen} />
+        <Button label="View Detail" onClick={this.handleOpen} />
         <Dialog
           title="Dialog With Actions"
           actions={actions}
