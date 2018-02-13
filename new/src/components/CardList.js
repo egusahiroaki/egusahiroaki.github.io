@@ -16,37 +16,44 @@ var testItems = [
   {
     image: dotInt,
     title: 'Dot Integer',
-    description:'' // Various column sizes and integer values ​​of row sizes are displayed.
+    description:'', // Various column sizes and integer values ​​of row sizes are displayed.
+    url: 'https://egusahiroaki.github.io/dot_int/'
   },
   {
     image: egg,
     title:'Egg',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/friedEgg1/'
   },
   {
     image: face,
     title:'Face',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/Face/'
   },
   {
     image: mtg,
     title:'markdown table',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/'
   },
   {
     image: brush,
     title:'brush',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/brush01/'
   },
   {
     image: quick,
     title: 'Quick Sort',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/quickSort/'
   },
   {
     image: bubble,
     title: 'Bubble Sort',
-    description:''
+    description:'',
+    url: 'https://egusahiroaki.github.io/bubbleSort/'
   }
 
 ]
@@ -77,6 +84,7 @@ class CardList extends Component {
             image={item.image}
             title={item.title}
             description={item.description}
+            url={item.url}
           />
         })}
       </ul>

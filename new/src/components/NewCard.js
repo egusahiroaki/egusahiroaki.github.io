@@ -6,6 +6,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import bubble from '../images/bubble_sort.png';
 
+import DetailModal from './DetailModal';
+
+
 
 class NewCard extends Component {
   render() {
@@ -25,7 +28,7 @@ class NewCard extends Component {
             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
           </CardText> */}
           <CardActions>
-            <FlatButton label="View Detail" />
+            <DetailModal url={this.props.url} />
           </CardActions>
         </Card>
       </MuiThemeProvider>
