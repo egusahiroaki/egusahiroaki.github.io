@@ -7,6 +7,8 @@ import Typography from 'material-ui/Typography';
 import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
 import PlayArrowIcon from 'material-ui-icons/PlayArrow';
 import SkipNextIcon from 'material-ui-icons/SkipNext';
+import DetailModal from './DetailModal';
+
 
 const styles = theme => ({
   card: {
@@ -40,6 +42,12 @@ const styles = theme => ({
 function NewCard(props) {
   const { classes, theme } = props;
 
+  // play button clicked
+  var handlePlayClick = () => {
+    console.log("hogehoge");
+  };
+  
+
   return (
     <div>
       <Card className={classes.card} style={ {'maxWidth': '350px', 'margin':'30px auto' } }>
@@ -54,7 +62,7 @@ function NewCard(props) {
             <IconButton aria-label="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
-            <IconButton aria-label="Play/pause">
+            <IconButton aria-label="Play/pause" onClick={() => handlePlayClick() }>
               <PlayArrowIcon className={classes.playIcon} />
             </IconButton>
             <IconButton aria-label="Next">
