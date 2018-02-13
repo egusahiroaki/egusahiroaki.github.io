@@ -1,37 +1,54 @@
 import React, { Component } from 'react';
 import Card from './Card';
 
+import NewCard from './NewCard';
+
+
+import dotInt from '../images/dot_int.png';
+import egg from '../images/egg.png';
+import face from '../images/face.png';
+import mtg from '../images/markdown_table_generator.png';
+import brush from '../images/brush.png';
+import quick from '../images/quick_sort.png';
+import bubble from '../images/bubble_sort.png';
+
 var testItems = [
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文1'
+    image: dotInt,
+    title: 'Dot Integer',
+    description:'' // Various column sizes and integer values ​​of row sizes are displayed.
   },
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文2'
+    image: egg,
+    title:'Egg',
+    description:''
   },
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文3'
+    image: face,
+    title:'Face',
+    description:''
   },
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文4'
+    image: mtg,
+    title:'markdown table',
+    description:''
   },
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文5'
+    image: brush,
+    title:'brush',
+    description:''
   },
   {
-    image:'https://images.unsplash.com/photo-1462730677245-b7da0ec225d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b2c1faa1496f3331fb0630deda056d64&auto=format&fit=crop&w=1567&q=80',
-    title:'タイトル',
-    description:'説明文6'
+    image: quick,
+    title: 'Quick Sort',
+    description:''
+  },
+  {
+    image: bubble,
+    title: 'Bubble Sort',
+    description:''
   }
+
 ]
 
 var style = {
@@ -46,9 +63,17 @@ class CardList extends Component {
   render() {
     return (
       <ul style={style.cardList}>
-        {testItems.map((item) => {
+        {/* {testItems.map((item) => {
           return <Card
-            key={item.description}
+            key={item.title}
+            image={item.image}
+            title={item.title}
+            description={item.description}
+          />
+        })} */}
+        {testItems.map((item) => {
+          return <NewCard
+            key={item.title}
             image={item.image}
             title={item.title}
             description={item.description}

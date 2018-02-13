@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer">
-        Footer
+        ©Hiroaki Egusa All Rights Reserved.
       </div>
     );
   }
