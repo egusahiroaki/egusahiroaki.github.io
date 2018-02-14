@@ -105,28 +105,88 @@
   /* height: 190px; */
 }
 
+/* iframeのそとのdiv */
 .Detail {
   position: absolute;
-  background: #FF0000;
-  width: 300px;
-  height: 300px;
+  /* background: #FF0000; */
+  width: 500px;
+  height: 500px;
   left: 0;
   right: 0;
   bottom: 150px;
   margin: auto;
   transition: 1s;
   z-index: 1;
+
+  overflow:hidden;
+  border-radius: 50%;
+
+  -webkit-animation: rotating 10s linear infinite;
+  -moz-animation: rotating 10s linear infinite;
+  -ms-animation: rotating 10s linear infinite;
+  -o-animation: rotating 10s linear infinite;
+  animation: rotating 10s linear infinite;
+}
+
+
+.DetailCenter {
+  position: absolute;
+  background: black;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  margin: auto;
+  transition: 1s;
+  z-index: 4;
+
+  overflow:hidden;
+  border-radius: 50%;
+
+  -webkit-animation: rotating 10s linear infinite;
+  -moz-animation: rotating 10s linear infinite;
+  -ms-animation: rotating 10s linear infinite;
+  -o-animation: rotating 10s linear infinite;
+  animation: rotating 10s linear infinite;
 }
 
 /* Detailにくっつく */
 .clicked {
-  bottom: -300px;
+  top:0;
+  bottom:-300px;
+  left: 0;
+  right: 0;
   z-index: 2;
   /* position: fixed; */
   /* background-color: #3f3; */
 }
 
-.outside {
-  margin-left: 10px;
-  /* background-color: #3f3; */
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
