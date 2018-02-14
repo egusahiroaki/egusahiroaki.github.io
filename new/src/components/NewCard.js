@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography';
 import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
 import PlayArrowIcon from 'material-ui-icons/PlayArrow';
 import SkipNextIcon from 'material-ui-icons/SkipNext';
+import DetailModal from './DetailModal';
 
 const styles = theme => ({
   card: {
@@ -67,7 +68,7 @@ function NewCard(props) {
             <IconButton aria-label="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
-            <IconButton aria-label="Play/pause" onClick={() => handlePlayClick(props.index) }>
+            <IconButton aria-label="Play/pause" onClick={props.click}>
               <PlayArrowIcon className={classes.playIcon} />
             </IconButton>
             <IconButton aria-label="Next">
@@ -81,6 +82,7 @@ function NewCard(props) {
           title="Live from space album cover"
         />
       </Card>
+      {/* <DetailModal/> */}
     </div>
   );
 }

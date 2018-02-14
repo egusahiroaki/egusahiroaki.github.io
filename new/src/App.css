@@ -96,17 +96,33 @@
   margin: 30px auto;
   height: 151px;
   background-color: red;
-  transition: 2s;
+  /* transition: 1s; */
 }
 
 .cardOutside {
-  transition: 3s;
+  display: inline-block;
+  margin: 15px;
+  /* height: 190px; */
 }
 
+.Detail {
+  position: absolute;
+  background: #FF0000;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  margin: auto;
+  transition: 1s;
+  z-index: 1;
+}
+
+/* Detailにくっつく */
 .clicked {
-  max-width: 600px;
-  width: 500px;
-  height: 500px;
+  bottom: -300px;
+  z-index: 2;
+  /* position: fixed; */
   /* background-color: #3f3; */
 }
 

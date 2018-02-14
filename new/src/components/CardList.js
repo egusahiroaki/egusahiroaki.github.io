@@ -61,23 +61,57 @@ var style = {
     // display: "table",
     padding: "0",
     margin: "0",
+  },
+
+  canvasWrapprer: {
+    position: "relative",
+  },
+
+  canvas: {
+    // position: "absolute",
+    // background: "#FF0000",
+    // width: "50%",
+    // height: "300px",
+    // // top: 0,
+    // left: 0,
+    // right: 0,
+    // bottom: 130,
+    // margin: "auto",
   }
 }
 
 class CardList extends Component {
+
+  // newCardでのクリック
+  showModal(url){
+    console.log("親だよ");
+    console.log(url);
+
+    // 1つしかないため
+    var content = document.querySelectorAll(".Detail")[0];
+    content.classList.toggle('clicked');
+
+    document.getElementById('demo').src = url;
+  }
   render() {
     return (
-      <ul style={style.cardList}>
-        {/* {testItems.map((item) => {
-          return <Card
-            key={item.title}
-            image={item.image}
-            title={item.title}
-            description={item.description}
-          />
-        })} */}
+      <div>
+
+        <div style={style.canvasWrapprer}>
+          <div className="Detail">
+            <iframe 
+              id="demo"
+              src={this.props.url} 
+              width="300" 
+              height="300
+            ">
+            </iframe>
+          </div>
+        </div>
+
         {testItems.map((item, index) => {
           return <NewCard
+            click={() => this.showModal(item.url)}
             key={item.title}
             index={index}
             image={item.image}
@@ -86,7 +120,7 @@ class CardList extends Component {
             url={item.url}
           />
         })}
-      </ul>
+      </div>
     );
   }
 }
