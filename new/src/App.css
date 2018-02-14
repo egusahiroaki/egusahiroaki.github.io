@@ -111,8 +111,9 @@
   /* background: #FF0000; */
   width: 500px;
   height: 500px;
-  left: 0;
-  right: 0;
+  top: -200px;
+  left: 0px;
+  right: 0px;
   bottom: 150px;
   margin: auto;
   transition: 1s;
@@ -132,14 +133,15 @@
 .DetailCenter {
   position: absolute;
   background: black;
-  width: 100px;
-  height: 100px;
-  left: 0;
-  right: 0;
-  bottom: 200px;
+  width: 150px;
+  height: 150px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   margin: auto;
   transition: 1s;
-  z-index: 4;
+  z-index: 400;
 
   overflow:hidden;
   border-radius: 50%;
@@ -149,6 +151,7 @@
   -ms-animation: rotating 10s linear infinite;
   -o-animation: rotating 10s linear infinite;
   animation: rotating 10s linear infinite;
+
 }
 
 /* Detailにくっつく */

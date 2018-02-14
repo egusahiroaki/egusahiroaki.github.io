@@ -106,7 +106,7 @@ class CardList extends Component {
               height="500"
             >
             </iframe>
-            <div className="DetailCenter">
+            <div id="demoCenter" className="DetailCenter">
               hoge
             </div>
           </div>
