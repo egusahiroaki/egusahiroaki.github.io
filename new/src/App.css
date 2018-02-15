@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   background-color: #f3f3f3;
@@ -122,11 +123,11 @@
   overflow:hidden;
   border-radius: 50%;
 
-  -webkit-animation: rotating 10s linear infinite;
-  -moz-animation: rotating 10s linear infinite;
-  -ms-animation: rotating 10s linear infinite;
-  -o-animation: rotating 10s linear infinite;
-  animation: rotating 10s linear infinite;
+  -webkit-animation: rotating 20s linear infinite;
+  -moz-animation: rotating 20s linear infinite;
+  -ms-animation: rotating 20s linear infinite;
+  -o-animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
 }
 
 

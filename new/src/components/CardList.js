@@ -58,7 +58,6 @@ var testItems = [
 
 var style = {
   cardList: {
-    // display: "table",
     padding: "0",
     margin: "0",
   },
@@ -68,15 +67,6 @@ var style = {
   },
 
   canvas: {
-    // position: "absolute",
-    // background: "#FF0000",
-    // width: "50%",
-    // height: "300px",
-    // // top: 0,
-    // left: 0,
-    // right: 0,
-    // bottom: 130,
-    // margin: "auto",
   }
 }
 
