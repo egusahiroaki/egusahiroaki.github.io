@@ -74,20 +74,21 @@ class CardList extends Component {
 
   // newCardでのクリック
   showModal(url){
-    console.log("親だよ");
-    console.log(url);
+    window.open(url, '_blank');
+    // console.log("親だよ");
+    // console.log(url);
 
-    // 1つしかないため
-    var content = document.querySelectorAll(".Detail")[0];
-    content.classList.toggle('clicked');
+    // // 1つしかないため
+    // var content = document.querySelectorAll(".Detail")[0];
+    // content.classList.toggle('clicked');
 
-    document.getElementById('demo').src = url;
+    // document.getElementById('demo').src = url;
   }
   render() {
     return (
       <div>
 
-        <div style={style.canvasWrapprer}>
+        {/* <div style={style.canvasWrapprer}>
           <div className="Detail">
             <iframe 
               id="demo"
@@ -100,7 +101,7 @@ class CardList extends Component {
               hoge
             </div>
           </div>
-        </div>
+        </div> */}
 
         {testItems.map((item, index) => {
           return <NewCard
