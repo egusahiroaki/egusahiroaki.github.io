@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Hiroaki Egusa</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./js/jvector.js"></script>
+</head>
+<body>
+  <canvas id="world"></canvas>
+  <div class="content-wrapper">
+    <h1>Hiroaki Egusa</h1>
+    <section>
+      <h2>ArtWorks</h2>
+      <ul>
+        <li><a href="https://egusahiroaki.github.io/dot_int/">Dot</a></li>
+        <li><a href="https://egusahiroaki.github.io/friedEgg1/">Egg</a></li>
+        <!--
+        <li><a href="https://egusahiroaki.github.io/friedEgg1/">Ensō</a></li>
+        -->
+        <li><a href="https://egusahiroaki.github.io/Face/">Faces</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>©Hiroaki Egusa All Rights Reserved.</div>
+    </footer>
+  </div>
+
+</body>
+</html>
+<style type="text/css">
+
+html, body, ul, li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#world {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;  
+  width: 90%;
+  z-index: 1000;
+}
+
+.content-wrapper h1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 17px;
+  color: #5a5a5a;
+  padding: 20px 0;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+section {
+  margin-top: 50px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 13px;
+
+}
+
+section ul {
+  list-style: none;
+  text-align: center;
+}
+
+section ul li {
+  padding: 2px 0;
+  font-size: 15px;
+}
+
+li:hover{
+  color: #5a5a5a;
+  cursor: pointer;
+}
+
+footer {
+  display: inline-block;
+}
+
+footer div {
+  width: 90%;
+  text-align: center;
+  font-size: 9px;
+  position: fixed;
+  bottom: 0px;
+  padding: 20px;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link { color: black; }
+a:visited { color: black; }
+a:active { color: black; }
+</style>
+<script type="text/javascript">
+
+var dpr = window.devicePixelRatio || 1;
+
+
+// canvasを全画面にする。
+var canvas;
+
+(function(){
+  canvas = document.getElementById('world');
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  // console.log(canvas.width);
+  // console.log(canvas.height);
+  // キャンバスの表示自体が大きくならないように、CSSで元のサイズを設定しておく
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  // console.log(canvas.style.width);
+  // console.log(canvas.style.height);
+})();
+
+var context = canvas.getContext('2d');
+context.scale(dpr, dpr);
+
+var Particle = function(x,y){
+  this.location = new JVector(x,y);
+  this.velocity = new JVector((Math.random() * 2 - 1) * Math.floor(Math.random()*2+1), (Math.random() * 2 -1) * Math.floor(Math.random()*2+1));
+  this.size = 0;
+  this.color = "#"+((1<<24)*Math.random()|0).toString(16);//"#5de2b9";
+  this.connectNum = 0;
+}
+
+Particle.prototype.move = function(){
+  this.location.add(this.velocity);
+}
+
+Particle.prototype.loopEdge = function(){
+  if(this.location.x < 0){
+    this.location.x = this.location.x + canvas.width/dpr;
+  }
+
+  if(this.location.x > canvas.width/dpr){
+    this.location.x = this.location.x - canvas.width/dpr;
+  }
+
+  if(this.location.y < 0){
+    this.location.y = this.location.y + canvas.height/dpr;
+  }
+
+
+  if(this.location.y > canvas.height/dpr){
+    this.location.y = this.location.y - canvas.height/dpr;
+  }
+
+
+}
+
+Particle.prototype.draw = function(context){
+  context.beginPath();
+  context.arc(this.location.x, this.location.y, this.size, 0, Math.PI*2,true);
+  context.fillStyle = this.color;
+  context.fill();
+}
+
+// 近くに球体があったらlineを引く
+Particle.prototype.search = function(context, particles){
+  this.connectNum = 0;
+  for(var i=0; i < particles.length; i++){
+    var d2 = (this.location.x - particles[i].location.x) * (this.location.x - particles[i].location.x) + (this.location.y - particles[i].location.y) * (this.location.y - particles[i].location.y);
+    var d = Math.sqrt(d2);
+    if(d < 180){
+      context.beginPath();
+      context.moveTo(this.location.x, this.location.y);
+      context.lineTo(particles[i].location.x, particles[i].location.y);
+      context.lineWidth = 4/Math.sqrt(d); // 近いほどそのparticleに対するlineは太くなる
+      context.strokeStyle = this.color;
+      context.stroke();
+      this.connectNum++;
+    }
+  }
+
+  // 繋がると、particleは大きくなる
+  this.size = this.connectNum * 1.2;
+}
+
+var particles = [];
+var PARTICLE_NUM = 20;
+
+for(var i=0; i< PARTICLE_NUM; i++){
+  particles.push(new Particle(Math.random()*canvas.width, Math.random()*canvas.height));
+}
+
+var animation = function(){
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for(var i=0; i< PARTICLE_NUM; i++){
+    particles[i].move();
+    particles[i].loopEdge();
+    particles[i].search(context, particles);
+    particles[i].draw(context);
+  }
+};
+
+setInterval(animation,33);
+
+</script>
+<!--
+  Copyright 2017 Hiroaki Egusa Licensed by MIT License.
+-->
