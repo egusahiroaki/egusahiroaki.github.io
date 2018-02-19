@@ -6,7 +6,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -94,25 +94,24 @@
 /* iframeのそとのdiv */
 .Detail {
   position: absolute;
-  /* background: #FF0000; */
-  width: 500px;
-  height: 500px;
-  top: -200px;
+  background: #FF0000;
+  width: 40px;
+  height: 40px;
+  top: -50px;
   left: 0px;
   right: 0px;
-  bottom: 150px;
   margin: auto;
   transition: 1s;
   z-index: 1;
 
   overflow:hidden;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 
-  -webkit-animation: rotating 20s linear infinite;
+  /* -webkit-animation: rotating 20s linear infinite;
   -moz-animation: rotating 20s linear infinite;
   -ms-animation: rotating 20s linear infinite;
   -o-animation: rotating 20s linear infinite;
-  animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite; */
 }
 
 
@@ -132,21 +131,22 @@
   overflow:hidden;
   border-radius: 50%;
 
-  -webkit-animation: rotating 10s linear infinite;
+  /* -webkit-animation: rotating 10s linear infinite;
   -moz-animation: rotating 10s linear infinite;
   -ms-animation: rotating 10s linear infinite;
   -o-animation: rotating 10s linear infinite;
-  animation: rotating 10s linear infinite;
-
+  animation: rotating 10s linear infinite; */
 }
 
 /* Detailにくっつく */
 .clicked {
-  top:0;
-  bottom:-300px;
+  top:-10px;
+  /* bottom:-300px; */
   left: 0;
   right: 0;
   z-index: 2;
+  width: 500px;
+  height: 500px;
   /* position: fixed; */
   /* background-color: #3f3; */
 }
