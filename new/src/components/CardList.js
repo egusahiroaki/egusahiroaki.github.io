@@ -74,7 +74,7 @@ class CardList extends Component {
 
   // newCardでのクリック
   showModal(index, url){
-
+    window.scrollTo(0, 0);
     this.setState({ currentIndex:  index} );
     this.setState({ currentURL:  url} );
 
