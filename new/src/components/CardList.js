@@ -73,38 +73,74 @@ var style = {
 class CardList extends Component {
 
   // newCardでのクリック
-  showModal(url){
+  showModal(index, url){
+
+    this.setState({ currentIndex:  index} );
+    this.setState({ currentURL:  url} );
+
     // window.open(url, '_blank');
-    console.log("親だよ");
-    console.log(url);
+    // console.log("親だよ");
+    // console.log(url);
+
+    ////////////////////////////
 
     // // 1つしかないため
-    var content = document.querySelectorAll(".Detail")[0];
-    content.classList.toggle('clicked');
+    // 円盤
+    var contentWrapper = document.querySelectorAll(".Detail")[0];
+    contentWrapper.classList.add('clicked');
 
-    // document.getElementById('demo').src = url;
+    // 円盤の中心
+    var contentWrapper = document.querySelectorAll(".DetailCenter")[0];
+    contentWrapper.classList.add('DetailCenterClicked');
+ 
+    // 円盤の柄
+    var content = document.querySelectorAll(".demo")[0];
+    content.classList.add('clicked');
+    content.src = url;
+  }
+
+  stop(url){
+    // クリックしたら、サイズを小さくし再生を止める。
+    // console.log("stop");
+    // console.log(this.state.currentIndex);
+
+    var contentWrapper = document.querySelectorAll(".Detail")[0];
+    contentWrapper.classList.remove('clicked');
+
+    // 円盤の中心
+    var contentWrapper = document.querySelectorAll(".DetailCenter")[0];
+    contentWrapper.classList.remove('DetailCenterClicked');
+ 
+    // 円盤の柄
+    var content = document.querySelectorAll(".demo")[0];
+    content.classList.remove('clicked');
+
+    var content = document.querySelectorAll(".demo")[0];
+    content.classList.remove('clicked');
+    content.src = "";
   }
   render() {
+
     return (
       <div>
+        {/* componentに切り出したい */}
         <div style={style.canvasWrapprer}>
           <div className="Detail">
-            {/* <iframe 
-              id="demo"
-              src={this.props.url} 
+            <iframe 
+              className="demo"
               width="40" 
               height="40"
+              frameBorder="0"
             >
-            </iframe> */}
-            {/* <div id="demoCenter" className="DetailCenter">
-              hoge
-            </div> */}
+            </iframe>
+            <div onClick={() => this.stop()} id="demoCenter" className="DetailCenter">
+            </div>
           </div>
         </div>
 
         {testItems.map((item, index) => {
           return <NewCard
-            click={() => this.showModal(item.url)}
+            click={() => this.showModal(index, item.url)}
             key={item.title}
             index={index}
             image={item.image}
