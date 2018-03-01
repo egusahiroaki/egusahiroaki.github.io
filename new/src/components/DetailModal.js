@@ -6,19 +6,19 @@ class DetailModal extends React.Component {
   render() {
     return (
       <div style={{height: '95%'}} onClick={this.props.closeModal}>
-        <h2 style={{textAlign: 'center'}}>
+        <h3 style={{textAlign: 'center'}}>
           {this.props.item.title}
-        </h2>
+        </h3>
   
-        <div style={{height: '95%', textAlign: 'center'}}>
+        <div style={{height: '85%', textAlign: 'center'}}>
           <iframe
             src={this.props.item.url}
-            style={{width:'80%', height: '80%'}}
+            style={{width:'100%', height: '100%'}}
             frameBorder='0'
           />
         </div>
 
-        <div>{this.props.item.description}</div>
+        <div style={{margin:'10px auto', textAlign: 'center'}}>{this.props.item.description}</div>
       </div>
     );
   }
