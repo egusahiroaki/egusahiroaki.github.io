@@ -13,7 +13,7 @@ const Items = [
     description: 'Various column sizes and integer values ​​of row sizes are displayed.',
     url: 'https://egusahiroaki.github.io/dot_int/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'}
     ]
   },
   {
@@ -22,7 +22,7 @@ const Items = [
     description:'Fried eggs on the whole screen',
     url: 'https://egusahiroaki.github.io/friedEgg1/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'}
     ]
   },
   {
@@ -31,7 +31,7 @@ const Items = [
     description:'Face on the whole screen',
     url: 'https://egusahiroaki.github.io/Face/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'}
     ]
   },
   {
@@ -40,7 +40,7 @@ const Items = [
     description:'',
     url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/',
     tags: [
-      {title: 'Vue.js', color:'#ff8686'}
+      {title: 'Vue.js', bkColor:'#67b280', color:'white'}
     ]
   },
   {
@@ -49,7 +49,7 @@ const Items = [
     description:'You can write Anything.',
     url: 'https://egusahiroaki.github.io/brush01/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'}
     ]
   },
   {
@@ -58,8 +58,8 @@ const Items = [
     description:'Visualize sorting algorithm called quick sort',
     url: 'https://egusahiroaki.github.io/quickSort/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'},
-      {title: 'Algorithm', color:'#f7c770'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'},
+      {title: 'Algorithm', bkColor:'#f7c770', color:'white'}
     ]
   },
   {
@@ -68,8 +68,8 @@ const Items = [
     description:'Visualize sorting algorithm called bubble sort.',
     url: 'https://egusahiroaki.github.io/bubbleSort/',
     tags: [
-      {title: 'Canvas', color:'#ff8686'},
-      {title: 'Algorithm', color:'#f7c770'}
+      {title: 'Canvas', bkColor:'#ff8686', color:'white'},
+      {title: 'Algorithm', bkColor:'#f7c770', color:'white'}
     ]
   }
 ]

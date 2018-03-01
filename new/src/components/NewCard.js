@@ -52,7 +52,8 @@ function NewCard(props) {
               {props.tags.map((tag, index) => {
                 return <div 
                 style={{
-                  backgroundColor:tag.color,
+                  color: tag.color,
+                  backgroundColor:tag.bkColor,
                   margin: '3px',
                   display: 'inline',
                   padding: '3px',

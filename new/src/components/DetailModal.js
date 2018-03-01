@@ -21,7 +21,7 @@ class DetailModal extends React.Component {
         {this.props.item.tags.map((tag, index) => {
           return <div 
           style={{
-            backgroundColor:tag.color,
+            backgroundColor:tag.bkColor,
             margin: '3px',
             display: 'inline',
             padding: '4px',
