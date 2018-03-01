@@ -5,7 +5,7 @@ import React from 'react';
 class DetailModal extends React.Component {
   render() {
     return (
-      <div style={{height: '95%'}}>
+      <div style={{height: '95%'}} onClick={this.props.closeModal}>
         <h2 style={{textAlign: 'center'}}>
           {this.props.item.title}
         </h2>
@@ -14,7 +14,7 @@ class DetailModal extends React.Component {
           <iframe
             src={this.props.item.url}
             style={{width:'80%', height: '80%'}}
-            frameborder='0'
+            frameBorder='0'
           />
         </div>
 

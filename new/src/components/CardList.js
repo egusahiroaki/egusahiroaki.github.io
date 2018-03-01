@@ -157,7 +157,10 @@ class CardList extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <DetailModal item={this.state.currentItem} />
+          <DetailModal
+            item={this.state.currentItem}
+            closeModal={this.closeModal}
+          />
         </Modal>
 
         {testItems.map((item, index) => {
