@@ -24,9 +24,15 @@ class CardList extends Component {
   constructor() {
     super();
 
+    const firstItemsState = Items;
+
     this.state = {
+      currentItems: firstItemsState,
       modalIsOpen: false
     };
+
+    this.proceedToTheNext = this.proceedToTheNext.bind(this);
+    this.backToPrevious = this.backToPrevious.bind(this);
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -49,6 +55,34 @@ class CardList extends Component {
     this.setState({modalIsOpen: false});
   }
 
+  proceedToTheNext() {
+    console.log('つぎへ');
+    // const top = this.state.currentItems.pop();
+    // let nextState = this.state.currentItems;
+    // console.log(nextState);
+    // nextState.push(top);
+    // 頭のitemを取得
+
+    // const last = this.state.currentItems.slice(-1).pop();
+    // let nextState = this.state.currentItems;
+    // nextState.unshift(last);
+
+    const top = this.state.currentItems.shift();
+    let nextState = this.state.currentItems;
+    nextState.push(top);
+    this.setState({currentItems: nextState});
+  }
+
+  backToPrevious() {
+    // console.log('まえへ');
+    // const last = Items.slice(-1).pop()
+    // Items.unshift(last);
+    const last = this.state.currentItems.pop();
+    let nextState = this.state.currentItems;
+    nextState.unshift(last);
+    this.setState({currentItems: nextState});
+  }
+
   render() {
 
     return (
@@ -67,10 +101,12 @@ class CardList extends Component {
           />
         </Modal>
 
-        {Items.map((item, index) => {
+        {this.state.currentItems.map((item, index) => {
           return <NewCard
             click={() => this.openModal(item)}
-            key={item.title}
+            proceedToTheNext={this.proceedToTheNext}
+            backToPrevious={this.backToPrevious}
+            key={item.url}
             index={index}
             image={item.image}
             title={item.title}

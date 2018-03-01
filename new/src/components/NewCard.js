@@ -69,13 +69,13 @@ function NewCard(props) {
 
           </CardContent>
           <div className={classes.controls}>
-            <IconButton aria-label="Previous">
+            <IconButton aria-label="Previous" onClick={props.backToPrevious}>
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
             <IconButton aria-label="Play/pause" onClick={props.click}>
               <PlayArrowIcon className={classes.playIcon} />
             </IconButton>
-            <IconButton aria-label="Next">
+            <IconButton aria-label="Next" onClick={props.proceedToTheNext}>
               {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
             </IconButton>
           </div>
