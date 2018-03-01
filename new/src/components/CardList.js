@@ -76,6 +76,7 @@ class CardList extends Component {
             title={item.title}
             description={item.description}
             url={item.url}
+            tags={item.tags}
           />
         })}
       </div>

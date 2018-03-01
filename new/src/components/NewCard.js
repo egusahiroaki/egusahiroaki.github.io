@@ -48,6 +48,24 @@ function NewCard(props) {
             {/* <Typography variant="subheading" color="textSecondary">
               Mac Miller
             </Typography> */}
+            <div style={{textAlign: 'center', marginTop:'4px'}}>
+              {props.tags.map((tag, index) => {
+                return <div 
+                style={{
+                  backgroundColor:tag.color,
+                  margin: '3px',
+                  display: 'inline',
+                  padding: '3px',
+                  fontSize: '0.4em',
+                  borderRadius: '3px',
+                  cursor: 'pointer',
+                }}
+                >
+                  {tag.title}
+                </div>;
+              })}
+          </div>
+
           </CardContent>
           <div className={classes.controls}>
             <IconButton aria-label="Previous">
