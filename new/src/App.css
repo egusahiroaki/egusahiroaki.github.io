@@ -1,7 +1,7 @@
 
 .App {
   text-align: center;
-  background-color: #f3f3f3;
+  background-color: #fdfff5; /*#f3f3f3*/
 }
 
 .App-header {
@@ -12,6 +12,7 @@
 
 .App-title {
   font-size: 1.1em;
+  letter-spacing: 3px;
 }
 
 .Item {
