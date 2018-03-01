@@ -39,20 +39,6 @@ const styles = theme => ({
 
 function NewCard(props) {
   const { classes, theme } = props;
-
-  // play button clicked
-  // var handlePlayClick = (index) => {
-  //   console.log(index);
-  //   var contents = document.querySelectorAll(".cardBase");
-  //   for(let [i, content] of contents.entries()){
-  //     if(i === index){
-  //       content.classList.toggle('clicked');
-  //     }else{
-  //       content.classList.toggle('outside');
-  //     }
-  //   }
-  // };
-  
   return (
     <div className="cardOutside">
       <Card className={"cardBase " + classes.card}>
