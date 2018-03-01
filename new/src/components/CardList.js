@@ -19,43 +19,66 @@ var testItems = [
     image: dotInt,
     title: 'Dot Integer',
     description:'', // Various column sizes and integer values ​​of row sizes are displayed.
-    url: 'https://egusahiroaki.github.io/dot_int/'
+    url: 'https://egusahiroaki.github.io/dot_int/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'}
+    ]
   },
   {
     image: egg,
     title:'Egg',
     description:'',
-    url: 'https://egusahiroaki.github.io/friedEgg1/'
+    url: 'https://egusahiroaki.github.io/friedEgg1/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'}
+    ]
   },
   {
     image: face,
     title:'Face',
     description:'',
-    url: 'https://egusahiroaki.github.io/Face/'
+    url: 'https://egusahiroaki.github.io/Face/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'}
+    ]
   },
   {
     image: mtg,
     title:'markdown table',
     description:'',
-    url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/'
+    url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/',
+    tags: [
+      {title: 'Vue.js', color:'#ff8686'}
+    ]
   },
   {
     image: brush,
     title:'brush',
     description:'You can write Anything.',
-    url: 'https://egusahiroaki.github.io/brush01/'
+    url: 'https://egusahiroaki.github.io/brush01/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'}
+    ]
   },
   {
     image: quick,
     title: 'Quick Sort',
     description:'Visualize sorting algorithm called quick sort',
-    url: 'https://egusahiroaki.github.io/quickSort/'
+    url: 'https://egusahiroaki.github.io/quickSort/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'},
+      {title: 'Algorithm', color:'#f7c770'}
+    ]
   },
   {
     image: bubble,
     title: 'Bubble Sort',
     description:'Visualize sorting algorithm called bubble sort.',
-    url: 'https://egusahiroaki.github.io/bubbleSort/'
+    url: 'https://egusahiroaki.github.io/bubbleSort/',
+    tags: [
+      {title: 'Canvas', color:'#ff8686'},
+      {title: 'Algorithm', color:'#f7c770'}
+    ]
   }
 
 ]

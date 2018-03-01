@@ -10,13 +10,22 @@ class DetailModal extends React.Component {
           {this.props.item.title}
         </h3>
   
-        <div style={{height: '85%', textAlign: 'center'}}>
+        <div style={{height: '80%', textAlign: 'center', marginBottom: '8px'}}>
           <iframe
             src={this.props.item.url}
             style={{width:'100%', height: '100%'}}
             frameBorder='0'
           />
         </div>
+
+        {this.props.item.tags.map((tag, index) => {
+          return <div 
+          style={{backgroundColor:tag.color, margin: '3px', display: 'inline', padding: '4px', fontSize: '0.8em', borderRadius: '4px'}}
+          >
+            {tag.title}
+          </div>;
+        })}
+
 
         <div style={{margin:'10px auto', textAlign: 'center'}}>{this.props.item.description}</div>
       </div>
