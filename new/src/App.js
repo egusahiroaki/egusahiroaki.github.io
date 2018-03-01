@@ -47,8 +47,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <div className="App">
           <header className="App-header">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <h1 className="App-title">Welcome</h1>
+            <h1 className="App-title">HIROAKI EGUSA</h1>
           </header>
           {/* <Header /> */}
           <CardList />
