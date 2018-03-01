@@ -20,7 +20,15 @@ class DetailModal extends React.Component {
 
         {this.props.item.tags.map((tag, index) => {
           return <div 
-          style={{backgroundColor:tag.color, margin: '3px', display: 'inline', padding: '4px', fontSize: '0.8em', borderRadius: '4px'}}
+          style={{
+            backgroundColor:tag.color,
+            margin: '3px',
+            display: 'inline',
+            padding: '4px',
+            fontSize: '0.8em',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
           >
             {tag.title}
           </div>;
