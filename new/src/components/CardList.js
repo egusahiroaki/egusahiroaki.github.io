@@ -62,8 +62,8 @@ var testItems = [
 
 const customStyles = {
   content : {
-    width : '80%',
-    height : '80%',
+    width : '90%',
+    height : '90%',
     top : '50%',
     left : '50%',
     right : 'auto',
@@ -85,49 +85,6 @@ class CardList extends Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-  // newCardでのクリック
-  // showModal(index, url){
-  //   window.scrollTo(0, 0);
-  //   this.setState({ currentIndex:  index} );
-  //   this.setState({ currentURL:  url} );
-
-  //   ////////////////////////////
-
-  //   // // 1つしかないため
-  //   // 円盤
-  //   // var contentWrapper = document.querySelectorAll(".Detail")[0];
-  //   // contentWrapper.classList.add('clicked');
-
-  //   // // 円盤の中心
-  //   // var contentWrapper = document.querySelectorAll(".DetailCenter")[0];
-  //   // contentWrapper.classList.add('DetailCenterClicked');
- 
-  //   // // 円盤の柄
-  //   // var content = document.querySelectorAll(".demo")[0];
-  //   // content.classList.add('clicked');
-  //   // content.src = url;
-  // }
-
-  // stop(url){
-  //   // クリックしたら、サイズを小さくし再生を止める。
-  //   // console.log("stop");
-  //   // console.log(this.state.currentIndex);
-
-  //   var contentWrapper = document.querySelectorAll(".Detail")[0];
-  //   contentWrapper.classList.remove('clicked');
-
-  //   // 円盤の中心
-  //   var contentWrapper = document.querySelectorAll(".DetailCenter")[0];
-  //   contentWrapper.classList.remove('DetailCenterClicked');
- 
-  //   // 円盤の柄
-  //   var content = document.querySelectorAll(".demo")[0];
-  //   content.classList.remove('clicked');
-
-  //   var content = document.querySelectorAll(".demo")[0];
-  //   content.classList.remove('clicked');
-  //   content.src = "";
-  // }
 
   openModal(item) {
     this.setState({
