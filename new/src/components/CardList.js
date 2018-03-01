@@ -42,19 +42,19 @@ var testItems = [
   {
     image: brush,
     title:'brush',
-    description:'',
+    description:'You can write Anything.',
     url: 'https://egusahiroaki.github.io/brush01/'
   },
   {
     image: quick,
     title: 'Quick Sort',
-    description:'',
+    description:'Visualize sorting algorithm called quick sort',
     url: 'https://egusahiroaki.github.io/quickSort/'
   },
   {
     image: bubble,
     title: 'Bubble Sort',
-    description:'',
+    description:'Visualize sorting algorithm called bubble sort.',
     url: 'https://egusahiroaki.github.io/bubbleSort/'
   }
 
