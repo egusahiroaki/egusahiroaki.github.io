@@ -10,7 +10,7 @@ const Items = [
   {
     image: dotInt,
     title: 'Dot Integer',
-    description:'', // Various column sizes and integer values ​​of row sizes are displayed.
+    description: 'Various column sizes and integer values ​​of row sizes are displayed.',
     url: 'https://egusahiroaki.github.io/dot_int/',
     tags: [
       {title: 'Canvas', color:'#ff8686'}
@@ -19,7 +19,7 @@ const Items = [
   {
     image: egg,
     title:'Egg',
-    description:'',
+    description:'Fried eggs on the whole screen',
     url: 'https://egusahiroaki.github.io/friedEgg1/',
     tags: [
       {title: 'Canvas', color:'#ff8686'}
@@ -28,7 +28,7 @@ const Items = [
   {
     image: face,
     title:'Face',
-    description:'',
+    description:'Face on the whole screen',
     url: 'https://egusahiroaki.github.io/Face/',
     tags: [
       {title: 'Canvas', color:'#ff8686'}
