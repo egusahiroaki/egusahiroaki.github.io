@@ -56,17 +56,6 @@ class CardList extends Component {
   }
 
   proceedToTheNext() {
-    console.log('つぎへ');
-    // const top = this.state.currentItems.pop();
-    // let nextState = this.state.currentItems;
-    // console.log(nextState);
-    // nextState.push(top);
-    // 頭のitemを取得
-
-    // const last = this.state.currentItems.slice(-1).pop();
-    // let nextState = this.state.currentItems;
-    // nextState.unshift(last);
-
     const top = this.state.currentItems.shift();
     let nextState = this.state.currentItems;
     nextState.push(top);
@@ -74,9 +63,6 @@ class CardList extends Component {
   }
 
   backToPrevious() {
-    // console.log('まえへ');
-    // const last = Items.slice(-1).pop()
-    // Items.unshift(last);
     const last = this.state.currentItems.pop();
     let nextState = this.state.currentItems;
     nextState.unshift(last);
