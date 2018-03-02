@@ -86,7 +86,6 @@ function NewCard(props) {
           title="Live from space album cover"
         />
       </Card>
-      {/* <DetailModal/> */}
     </div>
   );
 }
@@ -97,59 +96,3 @@ NewCard.propTypes = {
 };
 
 export default withStyles(styles, { withTheme: true })(NewCard);
-
-// import React, { Component } from 'react';
-// import {Card, CardActions, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-// import Button from 'material-ui/Button';
-// import Chip from 'material-ui/Chip';
-// import Avatar from 'material-ui/Avatar';
-
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-
-// import bubble from '../images/bubble_sort.png';
-
-// import DetailModal from './DetailModal';
-
-// const styles = {
-//   chip: {
-//     margin: 4,
-//   },
-//   wrapper: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//   },
-// };
-
-// class NewCard extends Component {
-//   render() {
-//     return (
-//       <MuiThemeProvider>
-//         <Card style={ {'max-width': '450px', 'margin':'30px auto' } }>
-//           <CardMedia
-//             overlay={<CardTitle title={this.props.title} subtitle={this.props.description} />}
-//           >
-//             <img src={this.props.image} alt="" />
-//           </CardMedia>
-//           {/* <CardTitle title={this.props.title} subtitle="Card subtitle" /> */}
-//           <CardText>
-
-//             <Chip
-//               style={styles.chip}
-//             >
-//               <Avatar size={32}>A</Avatar>
-//               Text Chip
-//             </Chip>
-
-//           </CardText>
-//           <CardActions>
-//             <DetailModal url={this.props.url} />
-//           </CardActions>
-//         </Card>
-//       </MuiThemeProvider>
-//     );
-//   }
-// }
-
-
-// export default NewCard;
