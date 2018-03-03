@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import CardList from './components/CardList';
-import CategoryList from './components/CategoryList';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createPalette from 'material-ui/styles/createPalette';
@@ -36,7 +35,6 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <div className="App">
           <Header />
-          <CategoryList />
           <CardList />
           <Footer />
         </div>

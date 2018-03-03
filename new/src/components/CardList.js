@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NewCard from './NewCard';
+import CategoryList from './CategoryList';
 
 import Modal from 'react-modal';
 import DetailModal from './DetailModal';
@@ -33,10 +34,33 @@ class CardList extends Component {
 
     this.proceedToTheNext = this.proceedToTheNext.bind(this);
     this.backToPrevious = this.backToPrevious.bind(this);
-
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+
+    this.sortByCategory = this.sortByCategory.bind(this);
+  }
+
+  sortByCategory(name){
+    let itemsByCategory = [];
+
+    if (name === 'ALL') {
+      this.setState({
+        currentItems: Items
+      });
+      return;
+    }
+
+    for(const item of Items) {
+      const has = item.tags.some(tag => tag.title === name);
+      if(has) {
+        itemsByCategory.push(item);
+      }
+    }
+
+    this.setState({
+      currentItems: itemsByCategory
+    });
   }
 
   openModal(item) {
@@ -86,6 +110,8 @@ class CardList extends Component {
             closeModal={this.closeModal}
           />
         </Modal>
+
+        <CategoryList onSetCategory={this.sortByCategory} />
 
         {this.state.currentItems.map((item, index) => {
           return <NewCard

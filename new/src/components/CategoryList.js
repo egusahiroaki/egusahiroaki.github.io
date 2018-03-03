@@ -10,14 +10,18 @@ class CategoryList extends Component {
       isSelected: false,
       categoryName: ''
     };
+
+    // this.selectCategory = this.selectCategory.bind(this);
   }
 
-  selectCategory(name){
-    this.setState({
-      isSelected: true,
-      categoryName: name
-    });
-  }
+  // selectCategory(name){
+  //   console.log(name);
+  //   this.props.onSetCategory(name);
+  //   // this.setState({
+  //   //   isSelected: true,
+  //   //   categoryName: name
+  //   // });
+  // }
 
   getCategoryListFromContent(){
     const rawCategory = Items.map((item) => item.tags);
@@ -40,6 +44,7 @@ class CategoryList extends Component {
     };
 
     const category = unique(flatten(rawCategory));
+    category.unshift({title: 'ALL', color:'white', bkColor:'#de9ade'});
     return category;
   }
   render() {
@@ -55,8 +60,9 @@ class CategoryList extends Component {
               padding: '3px',
               fontSize: '0.4em',
               borderRadius: '3px',
+              cursor: 'pointer'
             }}
-            onClick={() => {this.selectCategory(tag.title);}}
+            onClick={() => {this.props.onSetCategory(tag.title);}}
           >
             {tag.title}
           </div>;
