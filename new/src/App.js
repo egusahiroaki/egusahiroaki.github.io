@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import CardList from './components/CardList'
 import Header from './components/Header'
-
 import Footer from './components/Footer'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import CardList from './components/CardList'
+import CategoryList from './components/CategoryList'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createPalette from 'material-ui/styles/createPalette'
 import createMuiTheme from 'material-ui/styles/createMuiTheme'
 import createTypography from 'material-ui/styles/createTypography'
@@ -36,6 +36,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <div className="App">
           <Header />
+          <CategoryList />
           <CardList />
           <Footer />
         </div>
