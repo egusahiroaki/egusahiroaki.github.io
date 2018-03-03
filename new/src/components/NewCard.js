@@ -50,7 +50,7 @@ function NewCard(props) {
             </Typography> */}
             <div style={{textAlign: 'center', marginTop:'4px'}}>
               {props.tags.map((tag, index) => {
-                return <div 
+                return <div key={index}
                 style={{
                   color: tag.color,
                   backgroundColor:tag.bkColor,

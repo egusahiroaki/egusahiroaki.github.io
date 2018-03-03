@@ -12,6 +12,7 @@ class DetailModal extends React.Component {
   
         <div style={{height: '80%', textAlign: 'center', marginBottom: '8px'}}>
           <iframe
+            title={this.props.item.title}
             src={this.props.item.url}
             style={{width:'100%', height: '100%'}}
             frameBorder='0'
@@ -20,6 +21,7 @@ class DetailModal extends React.Component {
 
         {this.props.item.tags.map((tag, index) => {
           return <div 
+          key={index}
           style={{
             color: tag.color,
             backgroundColor:tag.bkColor,
