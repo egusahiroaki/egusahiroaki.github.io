@@ -12,11 +12,11 @@ class CategoryList extends Component {
     };
   }
 
-  selectCategory(tag){
-    console.log(tag)
+  selectCategory(name){
+    console.log(name)
     this.setState({
       isSelected: true,
-      categoryName: ''
+      categoryName: name
     });
   }
 
@@ -56,9 +56,8 @@ class CategoryList extends Component {
               padding: '3px',
               fontSize: '0.4em',
               borderRadius: '3px',
-              cursor: 'pointer',
             }}
-            onClick={() => {this.selectCategory(tag)}}
+            onClick={() => {this.selectCategory(tag.title)}}
           >
             {tag.title}
           </div>;
