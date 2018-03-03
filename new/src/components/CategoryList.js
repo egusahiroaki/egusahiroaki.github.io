@@ -13,7 +13,6 @@ class CategoryList extends Component {
   }
 
   selectCategory(name){
-    console.log(name)
     this.setState({
       isSelected: true,
       categoryName: name
@@ -26,10 +25,10 @@ class CategoryList extends Component {
     // use flatten
     const flatten = list => list.reduce(
       (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-     );
+    );
 
     // unique by title key
-    const unique = (list, keyName) => {
+    const unique = (list) => {
       let newList = [];
       for(const item of list){
         const alreadyHave = newList.some((newItem) => newItem.title === item.title);
@@ -40,7 +39,7 @@ class CategoryList extends Component {
       return newList;
     };
 
-    const category = unique(flatten(rawCategory), 'title');
+    const category = unique(flatten(rawCategory));
     return category;
   }
   render() {
@@ -57,7 +56,7 @@ class CategoryList extends Component {
               fontSize: '0.4em',
               borderRadius: '3px',
             }}
-            onClick={() => {this.selectCategory(tag.title)}}
+            onClick={() => {this.selectCategory(tag.title);}}
           >
             {tag.title}
           </div>;

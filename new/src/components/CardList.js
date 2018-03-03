@@ -99,7 +99,7 @@ class CardList extends Component {
             description={item.description}
             url={item.url}
             tags={item.tags}
-          />
+          />;
         })}
       </div>
     );

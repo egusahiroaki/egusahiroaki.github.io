@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import CardList from './components/CardList'
-import CategoryList from './components/CategoryList'
+import CardList from './components/CardList';
+import CategoryList from './components/CategoryList';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import createPalette from 'material-ui/styles/createPalette'
-import createMuiTheme from 'material-ui/styles/createMuiTheme'
-import createTypography from 'material-ui/styles/createTypography'
+import createPalette from 'material-ui/styles/createPalette';
+import createMuiTheme from 'material-ui/styles/createMuiTheme';
+import createTypography from 'material-ui/styles/createTypography';
 
 
-const font = "'Comfortaa', sans-serif"; 
+const font = '\'Comfortaa\', sans-serif'; 
 
 const theme = (() => {
   const palette = createPalette({
