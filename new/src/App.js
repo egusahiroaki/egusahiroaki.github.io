@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import CardList from './components/CardList'
+import Header from './components/Header'
+
 import Footer from './components/Footer'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -12,11 +14,6 @@ import createTypography from 'material-ui/styles/createTypography'
 
 
 const font = "'Comfortaa', sans-serif"; 
-
-// Comfortaaを全体で使う
-// const muiTheme = getMuiTheme({
-//   fontFamily: font
-// });
 
 const theme = (() => {
   const palette = createPalette({
@@ -33,23 +30,12 @@ const theme = (() => {
   });
 })();
 
-// const theme = createMuiTheme({
-//   typography: createTypography(createPalette(), {
-//     fontFamily: '"Comic Sans"',
-//   })
-// });
-
-
-
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">HIROAKI EGUSA</h1>
-          </header>
-          {/* <Header /> */}
+          <Header />
           <CardList />
           <Footer />
         </div>
