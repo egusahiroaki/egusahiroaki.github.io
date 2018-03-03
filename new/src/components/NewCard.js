@@ -41,7 +41,7 @@ function NewCard(props) {
   const { classes, theme } = props;
   return (
     <div className="cardOutside">
-      <Card className={"cardBase " + classes.card}>
+      <Card className={'cardBase ' + classes.card}>
         <div className={classes.details} >
           <CardContent className={classes.content}>
             <Typography variant="headline">{props.title}</Typography>
@@ -51,21 +51,21 @@ function NewCard(props) {
             <div style={{textAlign: 'center', marginTop:'4px'}}>
               {props.tags.map((tag, index) => {
                 return <div key={index}
-                style={{
-                  color: tag.color,
-                  backgroundColor:tag.bkColor,
-                  margin: '3px',
-                  display: 'inline',
-                  padding: '3px',
-                  fontSize: '0.4em',
-                  borderRadius: '3px',
-                  cursor: 'pointer',
-                }}
+                  style={{
+                    color: tag.color,
+                    backgroundColor:tag.bkColor,
+                    margin: '3px',
+                    display: 'inline',
+                    padding: '3px',
+                    fontSize: '0.4em',
+                    borderRadius: '3px',
+                    cursor: 'pointer',
+                  }}
                 >
                   {tag.title}
                 </div>;
               })}
-          </div>
+            </div>
 
           </CardContent>
           <div className={classes.controls}>

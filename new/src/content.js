@@ -72,6 +72,6 @@ const Items = [
       {title: 'Algorithm', bkColor:'#f7c770', color:'white'}
     ]
   }
-]
+];
 
 export default Items;
