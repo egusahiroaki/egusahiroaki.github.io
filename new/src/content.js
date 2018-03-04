@@ -38,7 +38,7 @@ const Items = [
   {
     image: mtg,
     title:'Markdown table',
-    description:'',
+    description:'Generate Table Format',
     url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/',
     tags: [
       {title: 'Vue.js', bkColor:'#67b280', color:'white'}
@@ -76,7 +76,7 @@ const Items = [
   {
     image: pb,
     title: 'Polar Bear',
-    description:'',
+    description:'Observation at the North Pole',
     url: 'https://egusahiroaki.github.io/pb/',
     tags: [
       {title: 'Canvas', bkColor:'#ff8686', color:'white'},
