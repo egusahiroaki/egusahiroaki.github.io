@@ -36,7 +36,7 @@ const Items = [
   },
   {
     image: mtg,
-    title:'markdown table',
+    title:'Markdown table',
     description:'',
     url: 'https://egusahiroaki.github.io/markdownTableGenerator/#/',
     tags: [
@@ -45,7 +45,7 @@ const Items = [
   },
   {
     image: brush,
-    title:'brush',
+    title:'Brush',
     description:'You can write Anything.',
     url: 'https://egusahiroaki.github.io/brush01/',
     tags: [
