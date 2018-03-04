@@ -37,6 +37,9 @@ class CardList extends Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.prevModal = this.prevModal.bind(this);
+    this.nextModal = this.nextModal.bind(this);
+
 
     this.sortByCategory = this.sortByCategory.bind(this);
   }
@@ -79,6 +82,20 @@ class CardList extends Component {
     this.setState({modalIsOpen: false});
   }
 
+  prevModal() {
+    this.setState({
+      modalIsOpen: true,
+      currentItem: this.state.currentItems[2]
+    });
+  }
+
+  nextModal() {
+    this.setState({
+      modalIsOpen: true,
+      currentItem: this.state.currentItems[2]
+    });
+  }
+
   proceedToTheNext() {
     const top = this.state.currentItems.shift();
     let nextState = this.state.currentItems;
@@ -108,6 +125,8 @@ class CardList extends Component {
           <DetailModal
             item={this.state.currentItem}
             closeModal={this.closeModal}
+            prevModal={this.prevModal}
+            nextModal={this.nextModal}
           />
         </Modal>
 
