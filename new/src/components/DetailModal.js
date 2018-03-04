@@ -15,7 +15,7 @@ class DetailModal extends React.Component {
           />
         </div>
 
-        {this.props.item.tags.map((tag, index) => {
+        {/* {this.props.item.tags.map((tag, index) => {
           return <div 
             key={index}
             style={{
@@ -31,7 +31,7 @@ class DetailModal extends React.Component {
           >
             {tag.title}
           </div>;
-        })}
+        })} */}
 
         <h3 style={{textAlign: 'center'}}>
           {this.props.item.title}
