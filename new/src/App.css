@@ -67,24 +67,3 @@ html {
   font-size: 14px;
   background: #b7b7b7;
 }
-
-/* Cardについて */
-.cardBase {
-  max-width: 350px;
-  margin: 30px auto;
-  height: 151px;
-  background-color: red;
-  /* transition: 1s; */
-}
-
-.cardOutside {
-  display: inline-block;
-  /* width: 80%; */
-  margin: 5px;
-  /* height: 190px; */
-}
-
-/* モーダル表示時の背景色 */
-.ReactModal__Overlay--after-open {
-  background-color: rgba(0, 0, 0, 0.75) !important;
-}
