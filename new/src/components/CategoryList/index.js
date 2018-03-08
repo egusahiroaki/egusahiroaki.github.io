@@ -33,7 +33,7 @@ class CategoryList extends Component {
 
     // unique by title key
     const unique = (list) => {
-      let newList = [];
+      const newList = [];
       for(const item of list){
         const alreadyHave = newList.some((newItem) => newItem.title === item.title);
         if (!alreadyHave){
