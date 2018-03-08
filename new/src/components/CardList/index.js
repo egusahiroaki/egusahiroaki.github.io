@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import CustomCard from '../CustomCard';
-import CategoryList from '../CategoryList';
+import CategoryList from '../CategoryList/index';
 
 import Modal from 'react-modal';
 import DetailModal from '../DetailModal';

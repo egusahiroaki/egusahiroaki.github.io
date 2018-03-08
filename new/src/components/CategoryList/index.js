@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Items from '../../src/content';
+import Items from '../../content';
+import './style.css';
 
 class CategoryList extends Component {
   constructor() {
@@ -49,7 +49,7 @@ class CategoryList extends Component {
   }
   render() {
     return (
-      <div style={{textAlign: 'center', marginTop:'20px'}}>
+      <div className="tag">
         {this.getCategoryListFromContent().map((tag, index) => {
           return <div key={index}
             style={{
