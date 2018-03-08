@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 
-import CardList from './components/CardList';
+import CardList from './components/CardList/index';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createPalette from 'material-ui/styles/createPalette';

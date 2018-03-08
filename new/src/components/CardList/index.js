@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import CustomCard from './CustomCard';
-import CategoryList from './CategoryList';
+import CustomCard from '../CustomCard';
+import CategoryList from '../CategoryList';
 
 import Modal from 'react-modal';
-import DetailModal from './DetailModal';
+import DetailModal from '../DetailModal';
 
-import Items from '../content';
+import Items from '../../content';
+
+import './style.css';
 
 const customStyles = {
   content : {
