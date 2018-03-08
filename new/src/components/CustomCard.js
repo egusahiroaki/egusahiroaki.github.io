@@ -37,7 +37,7 @@ const styles = theme => ({
   },
 });
 
-function NewCard(props) {
+function CustomCard(props) {
   const { classes, theme } = props;
   return (
     <div className="cardOutside">
@@ -90,9 +90,9 @@ function NewCard(props) {
   );
 }
 
-NewCard.propTypes = {
+CustomCard.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(NewCard);
+export default withStyles(styles, { withTheme: true })(CustomCard);

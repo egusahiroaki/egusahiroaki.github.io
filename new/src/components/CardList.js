@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NewCard from './NewCard';
+import CustomCard from './CustomCard';
 import CategoryList from './CategoryList';
 
 import Modal from 'react-modal';
@@ -133,7 +133,7 @@ class CardList extends Component {
         <CategoryList onSetCategory={this.sortByCategory} />
 
         {this.state.currentItems.map((item, index) => {
-          return <NewCard
+          return <CustomCard
             click={() => this.openModal(item)}
             proceedToTheNext={this.proceedToTheNext}
             backToPrevious={this.backToPrevious}
