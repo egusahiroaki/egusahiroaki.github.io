@@ -4,7 +4,7 @@ import CustomCard from '../CustomCard';
 import CategoryList from '../CategoryList/index';
 
 import Modal from 'react-modal';
-import DetailModal from '../DetailModal';
+import DetailModal from '../DetailModal/index';
 
 import Items from '../../content';
 

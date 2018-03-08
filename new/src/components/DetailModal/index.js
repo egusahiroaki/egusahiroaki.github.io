@@ -1,16 +1,16 @@
 /* eslint-disable react/no-multi-comp */
 
 import React from 'react';
+import './style.css';
 
 class DetailModal extends React.Component {
   render() {
     return (
-      <div style={{height: '100%'}} onClick={this.props.closeModal}>
-        <div style={{height: '80%', textAlign: 'center', marginBottom: '8px'}}>
+      <div className='wrapper' onClick={this.props.closeModal}>
+        <div className='iframe-wrapper'>
           <iframe
             title={this.props.item.title}
             src={this.props.item.url}
-            style={{width:'100%', height: '100%'}}
             frameBorder='0'
           />
         </div>
@@ -38,7 +38,7 @@ class DetailModal extends React.Component {
         </h3>
 
 
-        <div style={{margin:'10px auto', textAlign: 'center'}}>{this.props.item.description}</div>
+        <div className='description'>{this.props.item.description}</div>
         {/* <div style={{textAlign:'center', fontSize: '13px'}}>
           <span onClick={this.props.prevModal}> &#9664; </span>
           <span onClick={this.props.closeModal}> X </span>
