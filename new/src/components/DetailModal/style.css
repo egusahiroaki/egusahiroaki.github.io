@@ -17,3 +17,8 @@
   margin: 10px auto;
   text-align: center;
 }
+
+/* モーダル表示時の背景色 */
+.ReactModal__Overlay--after-open {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
